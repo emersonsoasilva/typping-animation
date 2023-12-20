@@ -1,0 +1,42 @@
+* {    
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier Prime', monospace, Arial;
+}
+
+body {
+    background: black;
+}
+
+.type-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.type-text::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 20px;
+    width: 2px;
+    background: white;
+    transform: translateY(-50%);
+    animation: blink 0.7s infinite;
+}
+
+.type-text.stop-blinking::before {
+    animation: none;
+
+}
+
+@keyframes blink{
+    50% {
+        opacity: 0;
+    }
+}
